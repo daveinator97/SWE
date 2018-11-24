@@ -1,8 +1,0 @@
--------------------------------------------------------------------------------
-Test set: de.fh.albsig.siemkeda.TestWeatherXmlCreatorMockito
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.084 s <<< FAILURE! - in de.fh.albsig.siemkeda.TestWeatherXmlCreatorMockito
-testWeatherXmlCreator  Time elapsed: 0.084 s  <<< ERROR!
-java.lang.NullPointerException
-	at de.fh.albsig.siemkeda.TestWeatherXmlCreatorMockito.testWeatherXmlCreator(TestWeatherXmlCreatorMockito.java:26)
-

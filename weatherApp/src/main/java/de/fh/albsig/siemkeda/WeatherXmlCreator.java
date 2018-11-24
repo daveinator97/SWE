@@ -102,7 +102,8 @@ public class WeatherXmlCreator {
         log.debug("creating XML file");
         DOMSource source = new DOMSource(doc);
         StreamResult result = new StreamResult(
-            new File("weather_" + cityname + "_" + lastupdated + ".xml"));
+            new File("./src/main/resources/weather_" + cityname + "_"
+                + lastupdated + ".xml"));
         transformer.transform(source, result);
         log.debug("XML file \"weather_" + cityname + "_" + lastupdated
             + ".xml\" created in root folder of the project");
