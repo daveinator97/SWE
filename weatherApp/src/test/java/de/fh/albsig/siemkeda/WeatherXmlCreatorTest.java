@@ -11,7 +11,8 @@ public class WeatherXmlCreatorTest {
   @DisplayName("file created")
   @Test
   public void weatherXmlCreatorFileExistsTest() {
-    String rtrn = "<current><city name=\"Albstadt\"></city><lastupdated value=\"test\"/></current>";
+    String rtrn = "<current><city name=\"Albstadt\"></city>"
+        + "<lastupdated value=\"test\"/></current>";
     WeatherXmlCreator wxc = new WeatherXmlCreator();
     Assertions.assertTrue(wxc.createXmlFile(rtrn));
     File f = new File("./src/main/resources/weather_Albstadt_test.xml");
@@ -21,7 +22,8 @@ public class WeatherXmlCreatorTest {
   @DisplayName("wrong input format")
   @Test
   public void weatherXmlCreatorWrongInputFormatTest() {
-    String wrongFormat = "<current><city>Albstadt</city><lastupdated>test</lastupdated></current>";
+    String wrongFormat = "<current><city>Albstadt</city>"
+        + "<lastupdated>test</lastupdated></current>";
     WeatherXmlCreator wxc = new WeatherXmlCreator();
     Assertions.assertFalse(wxc.createXmlFile(wrongFormat));
   }

@@ -21,9 +21,9 @@ public class DataRequest {
    */
   public final String getData(final String city) {
     /** apikey for openweathermap.org. */
-    String apikey = "de863058958118da2371539ca1f6d600";
-    String reqUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city
-        + "&appid=" + apikey + "&units=metric&mode=xml";
+    final String apikey = "de863058958118da2371539ca1f6d600";
+    final String reqUrl = "https://api.openweathermap.org/data/2.5/weather?q="
+        + city + "&appid=" + apikey + "&units=metric&mode=xml";
     log.debug("reqUrl: " + reqUrl);
     StringBuilder xmlData = new StringBuilder();
     try {

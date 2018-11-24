@@ -22,7 +22,8 @@ public class WeatherXmlCreatorMockitoTest {
   public void weatherXmlCreatorTest() {
 
     DataRequest mockedDr = Mockito.mock(DataRequest.class);
-    String rtrn = "<current><city name=\"Albstadt\"></city><lastupdated value=\"test\"/></current>";
+    String rtrn = "<current><city name=\"Albstadt\"></city> + "
+        + "<lastupdated value=\"test\"/></current>";
     Mockito.when(mockedDr.getData("Albstadt")).thenReturn(rtrn);
 
     wxc = new WeatherXmlCreator();

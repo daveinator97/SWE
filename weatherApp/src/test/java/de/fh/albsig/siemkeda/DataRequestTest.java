@@ -1,6 +1,9 @@
 package de.fh.albsig.siemkeda;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,8 +12,13 @@ public class DataRequestTest {
 
   private DataRequest dr;
 
+  @BeforeAll
+  public void setup() {
+    // before all tests
+  }
+
   @BeforeEach
-  public void setUp() {
+  public void setupThis() {
     this.dr = new DataRequest();
   }
 
@@ -25,5 +33,15 @@ public class DataRequestTest {
   @Test
   public void dataRequestNegativeTest() {
     Assertions.assertEquals("", dr.getData("Coruscant"));
+  }
+
+  @AfterEach
+  public void tearThis() {
+    // after each test
+  }
+
+  @AfterAll
+  public void tear() {
+    // after all tests
   }
 }

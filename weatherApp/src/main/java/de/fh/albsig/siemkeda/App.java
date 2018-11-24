@@ -1,5 +1,6 @@
 package de.fh.albsig.siemkeda;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 /** main class of weatherApp. */
@@ -12,13 +13,15 @@ public final class App {
   }
 
   /**
-   * main method.
+   * main method. input the city name for which city weather data should be
+   * retrieved creates a xml file containing the data in the resources folder of
+   * the project, named "weather_city_timeofmeseaurement.xml"
    *
-   * @param args input
+   * @param args input for which city weather data should be retrieved
    */
   public static void main(final String[] args) {
     log.debug("weatherApp main() started");
-    String inputCity = "Berlin";
+    String inputCity = "Albstadt";
     try {
       inputCity = args[0];
       log.debug("user input: " + inputCity);
@@ -27,7 +30,7 @@ public final class App {
     }
     String weatherXmlData = new DataRequest().getData(inputCity);
     log.debug("weatherXmlData empty: " + weatherXmlData.isEmpty());
-    if (!weatherXmlData.isEmpty()) {
+    if (StringUtils.isNotEmpty(weatherXmlData)) {
       new WeatherXmlCreator().createXmlFile(weatherXmlData);
       log.debug("weatherApp main() finished");
     } else {
